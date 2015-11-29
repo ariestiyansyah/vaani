@@ -14,7 +14,7 @@ class Localizer {
    */
   constructor () {
     this.defaultLang = 'en-US';
-    this.supportedLocales = ['en-US', 'es-ES', 'fr'];
+    this.supportedLocales = ['en-US', 'es-ES', 'fr', 'id'];
     this.prioritizedLangs = [];
 
     this._env = new Env(this.defaultLang, Fetch.bind(null, null));
