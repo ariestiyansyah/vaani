@@ -1,3 +1,78 @@
+<general__iWasntAbleToUnderstand "Maaf, Saya tidak mengerti."
+  spoken: "Maaf, Saya tidak mengerti."
+>
+<general__iDidntUnderstandSayAgain "Saya tidak mengerti, ucapkan lagi."
+  spoken: "Saya tidak mengerti, ucapkan lagi"
+>
+
+
+<talkie__tapToGetStarted "Tekan untuk memulai.">
+
+
+<firstTimeUse__ok "Ok">
+<firstTimeUse__whatIsVaani "Apa itu Vaani?">
+<firstTimeUse__whatIsVaaniContent "
+  Vaani adalah sistem pengenal suara yang dapat melakukan hal untuk Anda.
+">
+<firstTimeUse__helpTheCommunity "Bantu Komunitas!">
+<firstTimeUse__helpTheCommunityContent "
+  Anda dapat membantu kami meningkatkan pengenalan suara Vaani dengan membaca kalimat.
+">
+<firstTimeUse__notSure "Tidak yakin apa yang ditanyakan ke Vaani?">
+<firstTimeUse__notSureContent "
+  Temukan daftar semua hal yang Anda bisa katakan untuk Vaani disini
+">
+
+
 <help__whatCanIAsk "Apa yang bisa saya tanyakan?">
 <help__openApp "Buka &lt;App&gt;">
-<help__callNumber "Panggil &lt;Numéro&gt;">
+<help__callNumber "Panggil &lt;Number&gt;">
+
+
+<community__helpTheCommunity "Bantu Komunitas">
+<community__comingSoonContent "
+  <p>Anda dapat membantu kami meningkatkan pengenalan suara Vaani dengan membaca kalimat.</p>
+  <p>Rekam diri Anda membaca kalimat. Rekaman kemudian akan diserahkan menggunakan jaringan wifi</p>
+  <p>Itu saja! Kami menghargai bantuan!</p>
+  <p>(segera hadir)</p>
+">
+
+
+<standingBy__howMayIHelpYou "Bagaimana saya bisa membantu Anda?">
+<standingBy__iCantFindThatApp "Saya tidak dapat menemukan {{ $app }}."
+  spoken: "Saya tidak dapat menemukan aplikasi tersebut."
+>
+<standingBy__openCommand "buka">
+<standingBy__openCommandCue "startsWith">
+<standingBy__callCommand "panggil">
+<standingBy__callCommandCue "startsWith">
+<standingBy__specialAppPhone "telepon">
+<standingBy__specialAppContacts "kontak">
+<standingBy__grammar "
+  #JSGF v1.0;
+  grammar fxosVoiceCommands;
+  <app> =
+    {{ standingBy__specialAppPhone }} |
+    {{ standingBy__specialAppContacts }} |
+    {{ $appsGrammar }};
+  <digit> =
+    nol | /0.001/ ow | satu | dua | tiga | empat | lima |
+    enam | tujuh | delapan | sembilan
+  ;
+  public <simple> =
+    buka <app> |
+    panggil <digit>+
+  ;
+">
+
+
+<callNumber__doYouWantMeToCall "Apakah Anda ingin saya memanggil {{ $number }}? Ya/Tidak"
+  spoken: "Apakah Anda ingin saya memanggil {{ $numberSpaced }}?"
+>
+<callNumber__grammar "
+  #JSGF v1.0;
+  grammar fxosVoiceCommands;
+  public <simple> =
+    Ya | Tidak
+  ;
+">
